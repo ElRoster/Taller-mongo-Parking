@@ -6,14 +6,12 @@ const AutoIncrement = AutoIncrementFactory(mongoose);
 const CellSchema = new mongoose.Schema({
     Number_Cell: {
         type: Number,
-        // required: [true, "The cell number is required"],
         unique: [true, "The number of cells must be unique"]
     },
     State: {
         type: String,
         enum: ['available', 'busy'],
-        default: 'available',
-        required: [true, "The state is required"]
+        default: 'available'
     },
     Plate: {
         type: String,
